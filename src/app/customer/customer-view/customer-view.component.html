@@ -1,0 +1,12 @@
+<h4>List of Customers</h4>
+
+<div *ngFor="let customer of customers$ | async; let i=index">
+
+  <span >{{i+1}}.</span> {{customer.cardNumber}}
+  <span >{{i+1}}.</span> {{customer.cardHolder}}
+  <span >{{i+1}}.</span> {{customer.amount}}
+  <span >{{i+1}}.</span> {{customer.expMon}}
+  <span >{{i+1}}.</span> {{customer.expYear}}
+  <span >{{i+1}}.</span> {{customer.cvv}}
+
+</div>

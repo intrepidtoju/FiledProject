@@ -1,0 +1,53 @@
+<body>
+    <div class="container">
+        <form [formGroup]="payForm" (ngSubmit)='onSubmit()' id="form" class="form">
+            <h2>Make Your Payment</h2>
+            <div class="control" [ngClass]="{'alert alert-danger':formErrors.cardNumber}">
+                <label for="username">Card Number</label>
+                <input type="number" id="cardnumber" formControlName='cardNumber' minlength="7" maxlength="15" placeholder="306-102109-18668-71818" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.cardNumber'}}
+                </span>
+            </div>
+            <div class="control" [ngClass]="{'alert alert-danger': formErrors.cardHolder}">
+                <label for="username">Card Holder Name</label>
+                <input type="text" id="cardholder" formControlName='cardHolder' placeholder="Mr John Okereke" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.cardHolder'}}
+                </span>
+            </div>
+            <div class="control" [ngClass]="{'alert alert-danger':formErrors.amount}">
+                <label for="password">Amount</label>
+                <input type="number" id="amount" formControlName='amount' placeholder="$400" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.amount'}}
+                </span>
+            </div>
+            <div class="security">
+                <div class="control" [ngClass]="{'alert alert-danger': formErrors.expMon}">
+                <label for="password2">Exp Mon.</label>
+                <input type="number" id="expmon" formControlName='expMon' placeholder="01" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.expMon'}}
+                </span>
+            </div>
+            <div class="control" [ngClass]="{'alert alert-danger': formErrors.expYear}">
+                <label for="">Exp Year</label>
+                <input type="number" id="expyear" formControlName='expYear' placeholder="2021" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.expYear'}}
+                </span>
+            </div>
+            <div class="control" [ngClass]="{'alert alert-danger': formErrors.cvv}">
+                <label for="password2">CCV</label>
+                <input type="number" id="ccv" placeholder="123" (blur) ="logValidationErrors()">
+                <span class="help-block" *ngIf="formErrors.cardNumber">
+                    {{'formErrors.cvv'}}
+                </span>
+            </div>
+            </div>
+            <!-- <button (ng-click)='onClick()'>Pay</button> -->
+        </form>
+    </div>
+
+</body>} 
